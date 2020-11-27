@@ -1,26 +1,34 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import Input from './components/Input'
 import Spacer from './components/Spacer'
-import Constants from 'expo-constants'
 import ScreenContainer from './components/ScreenContainer'
 import { layoutStyles } from './styles/Layout'
 
-const statusBarHeight = Constants.statusBarHeight
-
 export default function App() {
+  const passwordInput = useRef()
+
   return (
     <ScreenContainer style={layoutStyles.container}>
       <StatusBar backgroundColor="transparent" />
 
-      <Spacer size={10} />
-      <Input />
-      {/* <Spacer size={4} />
-      <Input /> */}
+      <ScrollView
+        keyboardShouldPersistTaps="handled" // blur dell'input in focus
+      >
+        <Spacer size={10} />
+        <Input
+          label="Username"
+          onSubmitEditing={() => {
+            passwordInput.current.focus()
+          }}
+          blurOnSubmit={false}
+        />
+        <Spacer size={4} />
+        <Input label="Password" isPassword ref={passwordInput} />
+      </ScrollView>
+
     </ScreenContainer>
-    // <View style={styles.container}>
-    // </View>
   )
 }
 

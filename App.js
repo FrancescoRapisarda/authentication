@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Input from './components/Input.js'
-import Spacer from './components/Spacer.js'
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Input />
-      <Spacer size={4}/>
-      <Input />
-    </View>
-  );
-=======
 import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, Text, View } from 'react-native'
@@ -38,16 +22,11 @@ export default function App() {
     // <View style={styles.container}>
     // </View>
   )
->>>>>>> master
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-<<<<<<< HEAD
-    backgroundColor: '#fff',
-=======
     backgroundColor: '#fff'
->>>>>>> master
   },
 })
